@@ -1,0 +1,11 @@
+{
+    "rewrites": [
+        { "source": "/api/(.*)", "destination": "/api" },
+        { "source": "/fulfillment", "destination": "/api/fulfillment"},
+        { "source": "/requestsync", "destination": "/api/requestsync"},
+        { "source": "/reportstate", "destination": "/api/reportstate"},
+        { "source": "/auth", "destination": "/api"},
+        { "source": "/login", "destination": "/api"},
+        { "source": "/token", "destination": "/api"}
+    ]
+}

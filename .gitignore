@@ -1,0 +1,8 @@
+.vercel
+node_modules
+keys/
+disconnect.json
+execute.json
+sync.json
+query.json
+res/devices.js
