@@ -37,6 +37,11 @@ async function authCallback(req, res) {
     return res.redirect(redirectUrl);
 }
 
+function loginPage(req, res){
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
+    res.render('login.ejs', {response_url: req.query.response_url, client_id: req.query.client_id});
+}
+
 async function authUser(req, res){
     const email = req.body.username;
     const client_id = req.body.client_id;
@@ -122,4 +127,5 @@ async function tokenCallback(req, res){
 
 exports.authCallback = authCallback;
 exports.tokenCallback = tokenCallback;
+exports.loginPage = loginPage;
 exports.authUser = authUser;

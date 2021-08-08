@@ -28,10 +28,7 @@ expressApp.set('view engine', 'ejs');
 expressApp.set("views", path.join(__dirname, '../views'))
 
 expressApp.get('/auth', localAuth.authCallback);
-expressApp.get('/login', function(request, response) {
-  response.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
-  response.render('login.ejs', {response_url: request.query.response_url, client_id: request.query.client_id});
-});
+expressApp.get('/login', localAuth.loginPage);
 expressApp.post('/login', localAuth.authUser);
 expressApp.post('/token', localAuth.tokenCallback);
 
