@@ -41,8 +41,8 @@ async function reportStateWrapper(req, res) {
             jwt.verify(token, PSK_JWT);
 
             // TODO: reactivate time checks
-            //const currentTime = Date.now() / 1000;
-            //const commandDate = payload.d;
+            const currentTime = Date.now() / 1000;
+            const commandDate = payload.d;
             // expiration time set to 10 seconds
             //console.info("JWT REMAINING TIME: ", currentTime - commandDate);
             if (currentTime > commandDate + 10 || currentTime < commandDate) {
